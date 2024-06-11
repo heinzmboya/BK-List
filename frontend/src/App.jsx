@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react'
-import reactLogo from './assets/react.svg'
 import './App.css'
 import BookList from './components/BookList'
 import Search from './components/Search'
 import Grid from '@mui/material/Unstable_Grid2'
 import ReadingList from './components/ReadingList'
+import { useMediaQuery } from '@mui/material'
 
 function App() {
   const [readingList, setReadingList] = useState(() => {
@@ -68,26 +68,27 @@ function App() {
     )
   }
 
+  const isSmallScreen = useMediaQuery(theme => theme.breakpoints.down('sm'))
+
   return (
     <>
-      <div>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-
+      <div className="search-container">
         <Search books={books} onSearch={handleSearch} />
       </div>
 
-      <Grid container spacing={2}>
-        <Grid xs={8}>
+      <Grid container spacing={5}>
+        <Grid xs={12} sm={9}>
           <BookList books={filteredBooks} addToReadingList={addToReadingList} />
         </Grid>
-        <Grid xs={4}>
-          <ReadingList
-            readingList={readingList}
-            removeFromReadingList={removeFromReadingList}
-          />
-        </Grid>
+
+        {!isSmallScreen && (
+          <Grid xs={12} sm={3}>
+            <ReadingList
+              readingList={readingList}
+              removeFromReadingList={removeFromReadingList}
+            />
+          </Grid>
+        )}
       </Grid>
     </>
   )

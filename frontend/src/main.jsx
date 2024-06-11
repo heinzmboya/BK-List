@@ -7,7 +7,6 @@ import {
   ApolloClient,
   InMemoryCache,
   ApolloProvider,
-  gql,
 } from '@apollo/client'
 
 import { ThemeProvider, createTheme } from '@mui/material/styles'
@@ -15,6 +14,9 @@ import { ThemeProvider, createTheme } from '@mui/material/styles'
 const theme = createTheme({
   typography: {
     fontFamily: 'Mulish, Arial',
+    button: {
+      textTransform: 'none'
+    }
   },
 })
 

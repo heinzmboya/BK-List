@@ -4,9 +4,9 @@
     padding: 2rem;
     width: 100%;
     /* text-align: center; */
-    border-style: dotted;
-    padding-left: 10rem;
-    padding-right: 10rem;
+    /* border-style: dotted; */
+    padding-left: 5rem;
+    padding-right: 5rem;
 }
 
 .bbd {
@@ -44,10 +44,29 @@
     }
 }
 
+@media only screen and (max-width: 480px) {
+
+    /* Styles for devices with a max-width of 480px, typically mobile phones in portrait mode */
+    #root {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
 .card {
     padding: 2em;
 }
 
 .read-the-docs {
     color: #888;
+}
+
+.center {
+    margin: 0 auto;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

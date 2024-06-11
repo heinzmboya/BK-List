@@ -1,4 +1,3 @@
-import React from 'react'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import CardActions from '@mui/material/CardActions'
@@ -13,10 +12,16 @@ const ReadingList = ({ readingList, removeFromReadingList }) => {
         readingList.map((book, i) => (
           <Card key={i} sx={{ minWidth: 275, marginBottom: 2 }}>
             <CardContent>
-              <Typography variant="h5" component="div">
+              <Typography
+                sx={{ fontSize: '15px', fontWeight: 'bold' }}
+                component="div"
+              >
                 {book.title}
               </Typography>
-              <Typography sx={{ mb: 1.5 }} color="text.secondary">
+              <Typography
+                sx={{ fontSize: '12px', fontWeight: 'bold' }}
+                color="text.secondary"
+              >
                 {book.author}
               </Typography>
             </CardContent>

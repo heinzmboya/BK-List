@@ -1,4 +1,3 @@
-import * as React from 'react'
 import Box from '@mui/material/Box'
 import TextField from '@mui/material/TextField'
 import Autocomplete from '@mui/material/Autocomplete'
@@ -15,7 +14,11 @@ export default function BookSearch({ books, onSearch }) {
       renderOption={(props, option) => (
         <Box
           component="li"
-          sx={{ '& > img': { mr: 2, flexShrink: 0 } }}
+          sx={{
+            '& > img': { mr: 2, flexShrink: 0, borderRadius: 2, width: 60 },
+            fontSize: '13px',
+            fontWeight: 'bold',
+          }}
           {...props}
           key={`${option.title}-${option.author}`}
         >
