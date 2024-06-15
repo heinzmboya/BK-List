@@ -7,7 +7,9 @@ import Button from '@mui/material/Button'
 const ReadingList = ({ readingList, removeFromReadingList }) => {
   return (
     <div>
-      <h2>Reading List</h2>
+      <Typography color="primary" variant="h4" sx={{ fontWeight: 'bold' }}>
+        Reading List
+      </Typography>
       {readingList.length > 0 ? (
         readingList.map((book, i) => (
           <Card key={i} sx={{ minWidth: 275, marginBottom: 2 }}>
@@ -15,26 +17,33 @@ const ReadingList = ({ readingList, removeFromReadingList }) => {
               <Typography
                 sx={{ fontSize: '15px', fontWeight: 'bold' }}
                 component="div"
+                color="secondary.dark2"
               >
                 {book.title}
               </Typography>
               <Typography
                 sx={{ fontSize: '12px', fontWeight: 'bold' }}
-                color="text.secondary"
+                color="secondary.teal"
               >
                 {book.author}
               </Typography>
             </CardContent>
 
             <CardActions>
-              <Button size="small" onClick={() => removeFromReadingList(i)}>
+              <Button
+                color="red"
+                size="small"
+                onClick={() => removeFromReadingList(i)}
+              >
                 Remove
               </Button>
             </CardActions>
           </Card>
         ))
       ) : (
-        <p>No books in the reading list</p>
+        <Typography color="primary.turquoise">
+          No books in the reading list
+        </Typography>
       )}
     </div>
   )
